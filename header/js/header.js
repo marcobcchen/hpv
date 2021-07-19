@@ -6,19 +6,42 @@ header = function () {
   var APP_ID = '260309425392455';
   var SHARE_Hashtag = '8成與你有關';
   var isMobile = false;
+  var windowWidth = $(window).width();
 
   //private methods
   function init() {
     console.log('header is loaded.');
 
+    // 判斷裝置斷點
+    deviceBreakPoint();
+    iintNav();
+
+    $(window).resize(function(){
+      var currentW = $(window).width();
+      if (currentW != windowWidth) {
+        deviceBreakPoint();
+        setTimeout(() => {
+          if (isMobile) {
+            let navH = $('.header__nav').outerHeight();
+            $('.header__nav').css("top", - navH);
+          } else {
+            $('.header__nav').css("top", "0");
+          }
+          menuClose();
+        }, 300);
+        windowWidth = currentW;
+      }
+    });
+    
+  }
+  
+  // 判斷裝置斷點
+  function deviceBreakPoint(){
     if ($('body').width() <= 992) {
       isMobile = true;
     } else {
       isMobile = false;
     }
-
-    iintNav();
-    
   }
 
   function iintNav() {
@@ -46,10 +69,13 @@ header = function () {
       e.preventDefault();
     });
 
+
     if (isMobile) {
       let navH = $('.header__nav').outerHeight();
-      $('.header__nav').css("top", -navH);
+      $('.header__nav').css("top", - navH);
       // console.log("navH: "+navH)
+    }else {
+      $('.header__nav').css("top", "0");
     }
 
 

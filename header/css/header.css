@@ -104,10 +104,13 @@ header .header__nav span.bg-mobile {
   display: none;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1300px) {
   header .header__nav {
-    font-size: 0.8em;
+    font-size: 0.5em;
   }
+}
+
+@media (max-width: 1000px) {
   header .header__nav li {
     margin-left: 0.5vw;
     margin-right: 0.5vw;
@@ -116,6 +119,7 @@ header .header__nav span.bg-mobile {
 
 @media (max-width: 992px) {
   header .header__nav {
+    font-size: 0.8em;
     width: 100%;
     z-index: 9999;
     position: absolute;
