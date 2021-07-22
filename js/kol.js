@@ -4,11 +4,11 @@ $(function(){
     setSlick($('.kol-container'));
 
     $('.kol-container').on('afterChange', function(event, slick, currentSlide){
-      TweenMax.to($('.kol'), 0.6, {scale: 0.94, ease: Power3.easeOut});
+      TweenMax.to($('.kol'), 0.6, {scale: 0.8, ease: Power3.easeOut});
       TweenMax.to($('.kol-' + currentSlide), 0.6, {scale: 1, ease: Power3.easeOut});
     });
 
-    TweenMax.set($('.kol'), {scale: 0.94});
+    TweenMax.set($('.kol'), {scale: 0.8});
     TweenMax.set($('.kol-0'), {scale: 1});
   }
   init();

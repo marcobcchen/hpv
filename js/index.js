@@ -24,6 +24,7 @@
   let title_8 = $('.intro-2 .title-8');
   let title_8_bg = $('.intro-2 .title-8-bg');
 
+  let arrowGroup = $('.entrance .arrow-group');
   let bg_1 = $('.entrance .bg-1');
   let bg_filter = $('.entrance .filter-1');
   let guy_1_1 = $('.entrance .guy-1-1');
@@ -140,6 +141,26 @@
     }
   ]
 
+  const Util = {
+    toGetParam:function(name, casesensitive) {
+      name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+      let href = window.location.href;
+        
+      if (!casesensitive) name = name.toLowerCase();
+      if (!casesensitive) href = href.toLowerCase();
+        
+      let regexS = "[\\?&]" + name + "=([^&#]*)";
+      let regex = new RegExp(regexS);
+      let results = regex.exec(href);
+  
+      if (results == null) {
+        return "";
+      } else {
+        return results[1];
+      }
+    }
+  };
+
   $.html5Loader({
     filesToLoad: 'js/resource.json',
     onBeforeLoad: function(){
@@ -158,19 +179,14 @@
   });
 
   function init(){
+
     $(window).on('resize', onResize);
     onResize();
     resetTitle();
     resetGuy();
-    setSlick($('.case-container'));
-
-    $('.case-container').on('afterChange', function(event, slick, currentSlide){
-      TweenMax.to($('.case'), 0.6, {scale: 0.94, ease: Power3.easeOut});
-      TweenMax.to($('.case-' + (currentSlide + 1)), 0.6, {scale: 1, ease: Power3.easeOut});
-    });
-
-    TweenMax.set($('.case'), {scale: 0.94});
-    TweenMax.set($('.case-1'), {scale: 1});
+    initCase();
+    
+    TweenMax.set(arrowGroup, {autoAlpha: 0});
 
     // 測試使用
     $('.start').on('click', function(){
@@ -178,6 +194,7 @@
       // goTitleEnter();
       // goEntranceExit();
       // goCasesEnter();
+      // goGuyEnter();
     });
 
     $('.entrance .arrow-group').on('click', function(){
@@ -263,6 +280,30 @@
     $('.story-2 .content-2 article').on('scroll', goClueEndScroll_2);
     $('.story-3 .content-2 article').on('scroll', goClueEndScroll_3);
   }
+
+  function initCase(){
+    setSlick($('.case-container'));
+
+    TweenMax.set($('.case'), {scale: 0.8});
+    if(winW > 992){
+      TweenMax.set($('.case-2'), {scale: 1});
+    }else{
+      TweenMax.set($('.case-1'), {scale: 1});
+    }
+    
+
+    $('.case-container').on('afterChange', function(event, slick, currentSlide){
+      TweenMax.to($('.case'), 0.6, {scale: 0.8, ease: Power3.easeOut});
+
+      let nowId;
+      if(winW > 992){
+        nowId = (currentSlide + 2) > 5 ? 1 : currentSlide + 2
+      }else{
+        nowId = currentSlide + 1;
+      }
+      TweenMax.to($('.case-' + nowId), 0.6, {scale: 1, ease: Power3.easeOut});
+    });
+  }
   
 
   function onResize(){
@@ -271,10 +312,18 @@
     winCenterX = winW * 0.5;
     winCenterY = winH * 0.5;
 
-    // 依據window width去配置跑馬燈數量
-    if(entranceStatus === ''){
-      let marqueeAmount = Math.ceil(winW / 60);
-      setMarquee(marqueeAmount);
+    let page = Util.toGetParam('section');
+    // 如果從QA單元過來就跳過intro直接進case
+    if(page === 'case') {
+      TweenMax.set($('.intro-1'), {autoAlpha: 0});
+      TweenMax.set($('.intro-2'), {autoAlpha: 0});
+      goCasesEnter(); 
+    }else{
+      // 依據window width去配置跑馬燈數量
+      if(entranceStatus === ''){
+        let marqueeAmount = Math.ceil(winW / 60);
+        setMarquee(marqueeAmount);
+      }
     }
 
     // 測試使用 跳過階段
@@ -318,7 +367,7 @@
   function typewriter(el, strings, callback){
     typed = new Typed(el, {
       strings: [strings],
-      typeSpeed: 80,
+      typeSpeed: 50,
       showCursor: false,
       onComplete: function(){
         callback();
@@ -358,7 +407,7 @@
     // 啟動跑馬燈
     clearInterval(marqueeTimer);
     marqueeTimer = setInterval(goMarqueeEnter, 50);
-     // 三秒後暫停跑馬燈
+    // 三秒後暫停跑馬燈
     countdownTimer(3000, 100, function(){
       goMarqueeExit(marqueeAmount);
     });
@@ -376,8 +425,10 @@
     });
 
     // 將陣列第一筆拉到最後一筆
-    let first = ary.shift();
-    ary.push(first);
+    for(let i=0; i<5; i++){
+      let first = ary.shift();
+      ary.push(first);
+    }
 
     return textEl
   }
@@ -449,7 +500,7 @@
     }
     // console.log('move:', moveX, moveY);
 
-    TweenMax.to(el, 3, {
+    TweenMax.to(el, 2.5, {
       left: moveX,
       top: moveY,
       rotation: -30,
@@ -590,12 +641,14 @@
     TweenMax.to(sub_pattern_line, 0.2, {css: {'-webkit-mask-size': '100% 100%'}, delay: 1.4, ease: Power3.easeOut,
       onComplete: function(){
         entranceStatus = 'guyEnterComplete';
+        TweenMax.to(arrowGroup, 0.4, {autoAlpha: 1});
       }
     });
   }
 
   // 人物退場
   function goGuyExit(){
+    TweenMax.to(arrowGroup, 0.6, {autoAlpha: 0});
     TweenMax.to(bg_1, 0.6, {autoAlpha: 0});
     TweenMax.to(bg_filter, 0.6, {autoAlpha: 0});
 
@@ -608,11 +661,7 @@
     TweenMax.to(guy_3_2, 0.6, {alpha: 0, delay: 0.4, ease: Power3.easeOut});
     TweenMax.to(guy_3_3, 0.6, {alpha: 0, delay: 0.45, ease: Power3.easeOut});
 
-    if(winW < 992){
-      TweenMax.to(main_pattern, 0.6, {scale: 0.9, y: -210, delay: 0.3, ease: Power3.easeInOut});
-    }else{
-      TweenMax.to(main_pattern, 0.6, {scale: 0.8, y: -230, delay: 0.3, ease: Power3.easeInOut});
-    }
+    TweenMax.to(main_pattern, 0.6, {scale: 0.8, y: -190, delay: 0.3, ease: Power3.easeInOut});
     TweenMax.to(main_pattern_bg, 0.6, {css: {'-webkit-mask-size': '0% 100%'}, delay: 0.3, ease: Power3.easeInOut});
 
     countdownTimer(1000, 100, function(){
@@ -620,13 +669,14 @@
       let strings = '一份秘密文件​^100\n 記載一段又一段愛恨事件​^100\n 你，能否順利破案​^100\n 拯救迷失在情愛迴廊裡的男女？';
       typewriter(el, strings, function(){
         entranceStatus = 'guyExitComplete';
+        TweenMax.to(arrowGroup, 0.4, {autoAlpha: 1});
       });
     });
   }
 
   // 開頭序退場
   function goEntranceExit(){
-    TweenMax.to($('.pattern-container'), 1, {y: -winH * 0.5, autoAlpha: 0, ease: Power3.easeOut});
+    TweenMax.to($('.pattern-container'), 1, {y: -winH * 0.4, autoAlpha: 0, ease: Power3.easeOut});
     TweenMax.to($('.preface'), 1, {y: -winH * 0.5, autoAlpha: 0, ease: Power3.easeOut});
     TweenMax.to($('.arrow-group'), 1, {y: 80, autoAlpha: 0, ease: Power3.easeOut});
   }
@@ -646,7 +696,7 @@
       speed: 250,
       slidesToShow: 3,
       slidesToScroll: 1,
-      centerMode: true,
+      // centerMode: true,
       centerPadding: '10px',
       easing: 'Back',
       cssEase: 'ease-in',
@@ -732,7 +782,13 @@
     let pic_1 = $(this).find('.clue-end-1');
     let pic_2 = $(this).find('.clue-end-2');
     let pic_3 = $(this).find('.clue-end-3');
+    let pic_4 = $(this).find('.clue-end-4');
+    let pic_5 = $(this).find('.clue-end-5');
+    let pic_6 = $(this).find('.clue-end-6');
+    let pic_7 = $(this).find('.clue-end-7');
     let picBgScrollTop = $(this).find('.bg').offset().top - articleTop;
+
+    let t4, t5, t6, t7;
 
     if(winW < 992){
       articleScope = $(this).innerHeight() * 0.6;
@@ -744,10 +800,32 @@
       TweenMax.to(pic_1, 0.5, {x: 0, alpha: 1});
       TweenMax.to(pic_2, 0.5, {x: 0, alpha: 1, delay: 0.1});
       TweenMax.to(pic_3, 0.5, {x: 0, alpha: 1, delay: 0.2});
+      loopA();
     }else{
+      TweenMax.killTweensOf(pic_4);
+      TweenMax.killTweensOf(pic_5);
+      TweenMax.killTweensOf(pic_6);
+      TweenMax.killTweensOf(pic_7);
       TweenMax.to(pic_1, 0.5, {x: -20, alpha: 0});
       TweenMax.to(pic_2, 0.5, {x: -20, alpha: 0});
       TweenMax.to(pic_3, 0.5, {x: -20, alpha: 0});
+      TweenMax.to(pic_4, 0.5, {alpha: 0});
+      TweenMax.to(pic_5, 0.5, {alpha: 0});
+      TweenMax.to(pic_6, 0.5, {alpha: 0});
+      TweenMax.to(pic_7, 0.5, {alpha: 0});
+    }
+
+    function loopA(){
+      t5 = TweenMax.to(pic_5, 0.5, {alpha: 1, delay: 0.8});
+      t7 = TweenMax.to(pic_7, 0.5, {alpha: 1, delay: 0.8, onComplete: loopB});
+      t4 = TweenMax.to(pic_4, 0.5, {alpha: 0, delay: 0.8});
+      t6 = TweenMax.to(pic_6, 0.5, {alpha: 0, delay: 0.8});
+    }
+    function loopB(){
+      t5 = TweenMax.to(pic_5, 0.5, {alpha: 0, delay: 0.8});
+      t7 = TweenMax.to(pic_7, 0.5, {alpha: 0, delay: 0.8, onComplete: loopA});
+      t4 = TweenMax.to(pic_4, 0.5, {alpha: 1, delay: 0.8});
+      t6 = TweenMax.to(pic_6, 0.5, {alpha: 1, delay: 0.8});
     }
   }
 
@@ -774,8 +852,8 @@
       TweenMax.to(pic_2, 0.3, {y: 0, alpha: 1, delay: 0.1});
       TweenMax.to(pic_3, 0.3, {y: 0, alpha: 1, delay: 0.2});
       TweenMax.to($(this).find('.bg > img'), 0.3, {alpha: 1, delay: 0.4});
-      TweenMax.to(pic_4, 0.3, {alpha: 1, delay: 0.6});
-      TweenMax.to(pic_5, 0.3, {alpha: 1, delay: 0.7});
+      TweenMax.to(pic_4, 0.3, {alpha: 1, delay: 0.8});
+      TweenMax.to(pic_5, 0.3, {alpha: 1, delay: 0.9});
     }else{
       TweenMax.to(pic_1, 0.3, {y: 30, alpha: 0});
       TweenMax.to(pic_2, 0.3, {y: 30, alpha: 0});

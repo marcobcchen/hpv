@@ -14,18 +14,21 @@ header { position: fixed; left: 0; top: 0; width: 100%; height: 40px; background
 /* line 30, ../_sass/css/common/_global.scss */
 img { width: 100%; }
 
-/* line 35, ../_sass/css/common/_global.scss */
+/* line 34, ../_sass/css/common/_global.scss */
+.slick-slide { outline: none; }
+
+/* line 39, ../_sass/css/common/_global.scss */
 .arrow-left { position: absolute; left: 10px; top: 50%; width: 30px; transform: translateY(-50%); transition: left 0.3s ease-in-out; z-index: 1; cursor: pointer; }
-/* line 45, ../_sass/css/common/_global.scss */
+/* line 49, ../_sass/css/common/_global.scss */
 .arrow-left::before { content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: url(../images/cases/arrow_left_filter.png) no-repeat center center; background-size: contain; opacity: 0; animation: arrowFlash 1.6s infinite; }
-/* line 58, ../_sass/css/common/_global.scss */
+/* line 62, ../_sass/css/common/_global.scss */
 .arrow-left:hover { left: 5px; }
 
-/* line 63, ../_sass/css/common/_global.scss */
+/* line 67, ../_sass/css/common/_global.scss */
 .arrow-right { position: absolute; right: 10px; top: 50%; width: 30px; transform: translateY(-50%); transition: right 0.3s ease-in-out; z-index: 1; cursor: pointer; }
-/* line 73, ../_sass/css/common/_global.scss */
+/* line 77, ../_sass/css/common/_global.scss */
 .arrow-right::before { content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: url(../images/cases/arrow_right_filter.png) no-repeat center center; background-size: contain; opacity: 0; animation: arrowFlash 1.6s infinite; }
-/* line 86, ../_sass/css/common/_global.scss */
+/* line 90, ../_sass/css/common/_global.scss */
 .arrow-right:hover { right: 5px; }
 
 /* line 3, ../_sass/css/page/header.scss */
@@ -172,23 +175,26 @@ header .header__nav__share:hover { -webkit-filter: brightness(1.1); filter: brig
 @media (min-width: 768px) { /* line 129, ../_sass/css/page/_kol.scss */
   .kols .kols-container .kol-container .kol .title { left: 38%; top: 10%; width: 40%; } }
 /* line 142, ../_sass/css/page/_kol.scss */
-.kols .kols-container .kol-container .kol .magnifier { position: absolute; left: 66%; top: 23%; width: 20%; }
+.kols .kols-container .kol-container .kol .magnifier { position: absolute; left: 66%; top: 23%; width: 20%; transform-origin: right bottom; animation: magnifierRotate 1.6s infinite; }
 @media (min-width: 768px) { /* line 142, ../_sass/css/page/_kol.scss */
   .kols .kols-container .kol-container .kol .magnifier { left: 58%; top: 28%; width: 12%; } }
-/* line 155, ../_sass/css/page/_kol.scss */
+/* line 157, ../_sass/css/page/_kol.scss */
 .kols .kols-container .kol-container .kol .description { position: absolute; top: 40%; width: 80%; height: 50%; font-size: 14px; font-weight: 500; line-height: 1.8; color: #000; margin-bottom: 0; }
-@media (min-width: 576px) { /* line 155, ../_sass/css/page/_kol.scss */
+@media (min-width: 576px) { /* line 157, ../_sass/css/page/_kol.scss */
   .kols .kols-container .kol-container .kol .description { font-size: 18px; } }
-@media (min-width: 992px) { /* line 155, ../_sass/css/page/_kol.scss */
+@media (min-width: 992px) { /* line 157, ../_sass/css/page/_kol.scss */
   .kols .kols-container .kol-container .kol .description { top: 58%; height: 30%; font-size: 14px; line-height: 1.4; } }
-@media (min-width: 1200px) { /* line 155, ../_sass/css/page/_kol.scss */
+@media (min-width: 1200px) { /* line 157, ../_sass/css/page/_kol.scss */
   .kols .kols-container .kol-container .kol .description { line-height: 1.8; } }
-/* line 184, ../_sass/css/page/_kol.scss */
-.kols .kols-container .btn-container { padding: 0 1rem; }
 /* line 186, ../_sass/css/page/_kol.scss */
+.kols .kols-container .btn-container { padding: 0 1rem; }
+/* line 188, ../_sass/css/page/_kol.scss */
 .kols .kols-container .btn-container a { width: 200px; }
-@media (min-width: 1200px) { /* line 186, ../_sass/css/page/_kol.scss */
+@media (min-width: 1200px) { /* line 188, ../_sass/css/page/_kol.scss */
   .kols .kols-container .btn-container a { width: 240px; } }
 @keyframes arrowFlash { 0% { opacity: 0; }
   50% { opacity: 1; }
   100% { opacity: 0; } }
+@keyframes magnifierRotate { 0% { transform: rotate(10deg); }
+  50% { transform: rotate(0deg); }
+  100% { transform: rotate(10deg); } }

@@ -1,5 +1,6 @@
 $(function(){
 
+  let questionStatus = [true, true, true, true];
   let questionAmount = 4;
   let typewriterAry = [];
   let allQA = [
@@ -8,7 +9,7 @@ $(function(){
       answer: 4,
       numberOfOptions: 4,
       question: '敏銳的你，認為誰有可能感染HPV(人類乳突病毒)？',
-      detail: 'HPV主要傳染途徑為性行為，^100\n透過接觸皮膚傷口、^100\n黏膜或體液而感染。^100\n少數因為外部生殖器接觸^100\n帶有HPV的物品，也可能感染HPV。^100\n不分男女，人一生中感染^100\nHPV的機率高達80%！^100\n病毒可能藏在電梯按鈕、^100\n公司門把、泳池溫泉…^100\n小心重複感染後還可能引發癌症！^100\n快預約醫師HPV諮詢！',
+      detail: 'HPV主要傳染途徑為性行為，^100\n透過接觸皮膚傷口、^100\n黏膜或體液而感染。^100\n少數因為外部生殖器接觸^100\n帶有HPV的物品，也可能感染HPV。^100\n不分男女，人一生中感染^100\nHPV的機率高達80%！^100\n病毒可能藏在泳池、溫泉等等地方…^100\n小心重複感染後還可能引發癌症！^100\n快預約醫師HPV諮詢！',
     },
     {
       id: 2,
@@ -36,7 +37,7 @@ $(function(){
       answer: 4,
       numberOfOptions: 4,
       question: '你能告訴委託人，要如何預防感染HPV(人類乳突病毒)嗎？',
-      detail: 'HPV預防三關鍵跟我念一遍：^100\n安全性行為—發生親密行為時，^100\n全程使用保險套；^100\n依醫囑接種HPV疫苗，^100\n是預防HPV最直接且積極的方式；^100\n女性定期接受抹片檢查，^100\n若感染可以及早發現、及早治療！^100\n政府補助30歲以上婦女^100\n每年一次子宮頸抹片篩檢，^100\n建議每年定期檢查，^100\n至少也要每三年檢查一次。',
+      detail: 'HPV預防三關鍵跟我唸一遍：^100\n安全性行為—發生親密行為時，^100\n全程使用保險套；^100\n依醫囑接種HPV疫苗，^100\n是預防HPV最直接且積極的方式；^100\n女性定期接受抹片檢查，^100\n若感染可以及早發現、及早治療！^100\n政府補助30歲以上婦女^100\n每年一次子宮頸抹片篩檢，^100\n建議每年定期檢查，^100\n至少也要每三年檢查一次。',
     },
     {
       id: 6,
@@ -71,7 +72,7 @@ $(function(){
       answer: 3,
       numberOfOptions: 3,
       question: '若男性委託人感染HPV (人類乳突病毒)，有可能會跟下列什麼花有關？',
-      detail: '你相信嗎？^100\n全球男性因HPV致病人數較女性高！^100\nHPV有100多型別，男性重複感染^100\n高致癌型別HPV可能^100\n導致肛門癌(菊花QQ)，^100\n感染低致癌型別HPV^100\n則可能導致菜花。^100\n未施打HPV疫苗的18-70歲男性，^100\n菜花治好後仍有至少4成復發率。^100\n呼籲男性保護自己也保護另一伴，^100\n兩性共同預防更完整！',
+      detail: '你相信嗎？^100\n全球男性因HPV致病人數較女性高！^100\nHPV有100多型別，男性重複感染^100\n高致癌型別HPV可能^100\n導致肛門癌(菊花QQ)，^100\n感染低致癌型別HPV^100\n則可能導致菜花。^100\n未施打HPV疫苗的18-70歲男性，^100\n菜花治好後仍有至少4成復發率。^100\n呼籲男性保護自己也保護另一半，^100\n兩性共同預防更完整！',
     },
   ]
 
@@ -98,6 +99,9 @@ $(function(){
     function addQuestionHandler(qId){
       // 作答
       $('.q-' + qId + ' .option').on('click', function(){
+        if(!questionStatus[qId - 1]) return;
+        questionStatus[qId - 1] = false;
+
         let q = $('.q-' + qId);
         let qTop = q.offset().top;
         let qOptionTop = q.find('.option-group').offset().top;
@@ -121,16 +125,20 @@ $(function(){
           }
         }
   
-        TweenMax.to($('.q-' + qId), 0.6, {scrollTo: {y: moveY}, delay: 0.1, ease: Power3.easeOut,
+        TweenMax.to($('.q-' + qId), 0.6, {scrollTo: {y: 'max'}, delay: 0.1, ease: Power3.easeOut,
           onComplete: function(){
-            let el = document.querySelector('.q-' + qId + ' .typed-detail');
-            let strings = typewriterAry[qId - 1];
-            typewriter(el, strings, function(){
-              TweenMax.to($('.q-' + qId + ' .arrow-group'), 0.3, {autoAlpha: 1});
-              TweenMax.to($('.q-' + qId), 0.6, {scrollTo: {y: 'max'}, ease: Power3.easeOut});
-            });
+            
           }
         });
+
+        countdownTimer(600, 100, function(){
+          let el = document.querySelector('.q-' + qId + ' .typed-detail');
+          let strings = typewriterAry[qId - 1];
+          typewriter(el, strings, function(){
+            TweenMax.to($('.q-' + qId + ' .arrow-group'), 0.3, {autoAlpha: 1});
+            TweenMax.to($('.q-' + qId), 0.6, {scrollTo: {y: 'max'}, ease: Power3.easeOut});
+          });
+        })
       });
 
       // 下一題
@@ -155,7 +163,7 @@ $(function(){
   function typewriter(el, strings, callback){
     typed = new Typed(el, {
       strings: [strings],
-      typeSpeed: 80,
+      typeSpeed: 50,
       showCursor: false,
       onComplete: function(){
         callback();
@@ -191,6 +199,7 @@ $(function(){
       result.push(testArray[random]); 
       testArray.splice(random, 1); 
     } 
+
     return result; 
   } 
 
@@ -198,8 +207,9 @@ $(function(){
   function goDescriptionEnter(){
     countdownTimer(500, 100, function(){
       $('#typed-des').empty();
-      let strings = '看來，你已掌握了真相^100\n若你能破解情愛謎題^100\n成功拯救深陷其中的委託人，^100\n將有機會獲得 LINE POINTS 100點';
+      let strings = '看來，你已掌握了真相^100\n若你能破解情愛謎題^100\n成功拯救深陷其中的委託人^100\n將有機會獲得 LINE POINTS 100點';
       typewriter(document.querySelector('#typed-des'), strings, function(){
+        TweenMax.to($('.link-rule'), 0.6, {autoAlpha: 1});
         TweenMax.to($('.btn-start'), 0.6, {autoAlpha: 1});
       });
     });
