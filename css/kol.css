@@ -137,7 +137,7 @@ header .header__nav__share:hover { -webkit-filter: brightness(1.1); filter: brig
 @media (min-width: 1200px) { /* line 18, ../_sass/css/page/_kol.scss */
   .kols .kols-container { min-height: 780px; } }
 /* line 43, ../_sass/css/page/_kol.scss */
-.kols .kols-container .title-container .pattern { margin-top: 60px; width: 55%; }
+.kols .kols-container .title-container .pattern { margin-top: 60px; width: 75%; }
 @media (min-width: 576px) { /* line 43, ../_sass/css/page/_kol.scss */
   .kols .kols-container .title-container .pattern { margin-top: 70px; width: 50%; } }
 @media (min-width: 992px) { /* line 43, ../_sass/css/page/_kol.scss */

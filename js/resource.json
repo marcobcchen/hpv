@@ -1,7 +1,117 @@
 {
   "files": [
     {
+      "source": "images/cases/arrow_left_filter.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/cases/arrow_left.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/cases/arrow_right_filter.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/cases/arrow_right.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/cases/btn_action.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/cases/btn_other.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/cases/btn_teacher.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
       "source": "images/cases/case_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/cases/case_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/cases/case_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/cases/case_4.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/cases/case_5.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/cases/case_title_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/cases/case_title_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/cases/case_title_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/cases/case_title_4.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/cases/case_title_5.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/cases/title.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/entrance/arrow_filter.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/entrance/arrow.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/entrance/bg_1.jpg",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/entrance/bg_2.jpg",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/entrance/filter_1.png",
       "type": "IMAGE",
       "size": 270.336
     }

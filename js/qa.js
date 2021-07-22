@@ -16,7 +16,7 @@ $(function(){
       answer: 2,
       numberOfOptions: 4,
       question: '委託人的生殖器長出花椰菜狀的突起斑塊，疑似出現感染HPV(人類乳突病毒)的症狀，你建議他…？',
-      detail: '眉頭一皺，案情不單純！^100\n會不會是由HPV感染^100\n所引起的「菜花」！？^100\n快指派他到全台超過220間^100\nHPV衛教友善診所，^100\n有最專業的醫師團隊和^100\n最豐富完整的HPV衛教文宣品，^100\n任何關於HPV的各種^100\n疑難雜症都可以諮詢！',
+      detail: '眉頭一皺，案情不單純！^100\n會不會是由HPV感染^100\n所引起的「菜花」！？^100\n快指派他到全台超過240間^100\nHPV衛教友善診所，^100\n有最專業的醫師團隊和^100\n最豐富完整的HPV衛教文宣品，^100\n任何關於HPV的各種^100\n疑難雜症都可以諮詢！',
     },
     {
       id: 3,
@@ -125,13 +125,13 @@ $(function(){
           }
         }
   
-        TweenMax.to($('.q-' + qId), 0.6, {scrollTo: {y: 'max'}, delay: 0.1, ease: Power3.easeOut,
+        TweenMax.to($('.q-' + qId), 0.6, {scrollTo: {y: 'max'}, delay: 1.4, ease: Power3.easeOut,
           onComplete: function(){
             
           }
         });
 
-        countdownTimer(600, 100, function(){
+        countdownTimer(2100, 100, function(){
           let el = document.querySelector('.q-' + qId + ' .typed-detail');
           let strings = typewriterAry[qId - 1];
           typewriter(el, strings, function(){

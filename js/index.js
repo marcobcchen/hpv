@@ -141,6 +141,8 @@
     }
   ]
 
+  let loading1, loading2, loading3, loading4, loading5, loading6;
+
   const Util = {
     toGetParam:function(name, casesensitive) {
       name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
@@ -161,13 +163,92 @@
     }
   };
 
+  const LoadingLoop = function(_el){
+    let el = _el;
+
+    function loopA(){
+      // console.log('loop a:', el.parent().attr('class'));
+      let speed = Math.random() * (2 - 0.5) + 0.5;
+      let delayTime = Math.random() * (2 - 0.1) + 0.1;
+
+      // console.log(speed, delayTime);
+      TweenMax.fromTo(el, speed, 
+        {
+          scale: 0.3,
+          alpha: 0
+        },
+        {
+          scale: 1,
+          alpha: 1,
+          ease: Power3.easeOut, 
+          delay: delayTime, 
+          onComplete: loopB, 
+          onCompleteParams: [el],
+        },
+      );
+    }
+
+    function loopB(){
+      // console.log('loop b:', el.parent().attr('class'));
+      let speed = Math.random() * (2 - 0.5) + 0.5;
+      let delayTime = Math.random() * (0.5 - 0.1) + 0.1;
+  
+      TweenMax.to(el, speed, {
+        alpha: 0, 
+        ease: Power3.easeOut, 
+        delay: delayTime, 
+        onComplete: loopA, 
+        onCompleteParams: [el],
+      });
+    }
+
+    const obj = {};
+    obj.kill = function(){
+      for(let i=1; i<=6; i++){
+        TweenMax.killTweensOf($('.loading .text-'+i+' img'));
+      }
+    }
+
+    {
+      $(document).ready(function () {
+        loopA();
+      });
+    }
+
+    return obj;
+  };
+
+  function loading(start){
+    if(start){
+      loading1 = new LoadingLoop($('.loading .text-1 img'));
+      loading2 = new LoadingLoop($('.loading .text-2 img'));
+      loading3 = new LoadingLoop($('.loading .text-3 img'));
+      loading4 = new LoadingLoop($('.loading .text-4 img'));
+      loading5 = new LoadingLoop($('.loading .text-5 img'));
+      loading6 = new LoadingLoop($('.loading .text-6 img'));
+    }else{
+      loading1.kill();
+      loading2.kill();
+      loading3.kill();
+      loading4.kill();
+      loading5.kill();
+      loading6.kill();
+    }
+  }
+
   $.html5Loader({
     filesToLoad: 'js/resource.json',
     onBeforeLoad: function(){
-      console.log('on BeforeLoad');
+      // console.log('on BeforeLoad');
+      // loading(true);
     },
     onComplete: function(){
-      console.log('on complete');
+      // console.log('on complete');
+      // TweenMax.to($('.loading-bg'), 0.5, {autoAlpha: 0, delay: 0.3});
+      // TweenMax.to($('.loading'), 0.5, {autoAlpha: 0, delay: 0.3, onComplete: function(){
+      //   init();
+      //   loading(false);
+      // }})
       init();
     },
     onElementLoaded: function(obj, elm){
@@ -179,15 +260,12 @@
   });
 
   function init(){
-
     $(window).on('resize', onResize);
     onResize();
     resetTitle();
     resetGuy();
     initCase();
     
-    TweenMax.set(arrowGroup, {autoAlpha: 0});
-
     // 測試使用
     $('.start').on('click', function(){
       // goChipExit();
@@ -196,7 +274,8 @@
       // goCasesEnter();
       // goGuyEnter();
     });
-
+    
+    // 點擊切換下一個畫面
     $('.entrance .arrow-group').on('click', function(){
       if(entranceStatus === 'guyEnterProgress' || entranceStatus === 'guyExitProgress') return;
 
@@ -213,6 +292,7 @@
       }
     });
 
+    // 案件綁定偵聽
     for(let i=1; i<=storyStrings.length; i++){
       addCaseHandler(i);
     }
@@ -281,31 +361,6 @@
     $('.story-3 .content-2 article').on('scroll', goClueEndScroll_3);
   }
 
-  function initCase(){
-    setSlick($('.case-container'));
-
-    TweenMax.set($('.case'), {scale: 0.8});
-    if(winW > 992){
-      TweenMax.set($('.case-2'), {scale: 1});
-    }else{
-      TweenMax.set($('.case-1'), {scale: 1});
-    }
-    
-
-    $('.case-container').on('afterChange', function(event, slick, currentSlide){
-      TweenMax.to($('.case'), 0.6, {scale: 0.8, ease: Power3.easeOut});
-
-      let nowId;
-      if(winW > 992){
-        nowId = (currentSlide + 2) > 5 ? 1 : currentSlide + 2
-      }else{
-        nowId = currentSlide + 1;
-      }
-      TweenMax.to($('.case-' + nowId), 0.6, {scale: 1, ease: Power3.easeOut});
-    });
-  }
-  
-
   function onResize(){
     winW = $(window).innerWidth();
     winH = $(window).innerHeight();
@@ -361,6 +416,31 @@
       $('.h-scale-container').css('width', winW);
       $('.h-scale-container').css('height', winW * 1080 / 770);
     }
+  }
+
+  // 案件初始化
+  function initCase(){
+    setSlick($('.case-container'));
+
+    TweenMax.set($('.case'), {scale: 0.8});
+    if(winW > 992){
+      TweenMax.set($('.case-2'), {scale: 1});
+    }else{
+      TweenMax.set($('.case-1'), {scale: 1});
+    }
+    
+
+    $('.case-container').on('afterChange', function(event, slick, currentSlide){
+      TweenMax.to($('.case'), 0.6, {scale: 0.8, ease: Power3.easeOut});
+
+      let nowId;
+      if(winW > 992){
+        nowId = (currentSlide + 2) > 5 ? 1 : currentSlide + 2
+      }else{
+        nowId = currentSlide + 1;
+      }
+      TweenMax.to($('.case-' + nowId), 0.6, {scale: 1, ease: Power3.easeOut});
+    });
   }
 
   // 打字機
@@ -683,6 +763,8 @@
   
   // 案例進場
   function goCasesEnter(){
+    TweenMax.set(bg_1, {autoAlpha: 0});
+    TweenMax.set(bg_filter, {autoAlpha: 0});
     $('.cases').addClass('visible');
     TweenMax.to($('.cases .cases-container'), 1, {top: '0%', ease: Power3.easeOut});
   }
@@ -788,8 +870,6 @@
     let pic_7 = $(this).find('.clue-end-7');
     let picBgScrollTop = $(this).find('.bg').offset().top - articleTop;
 
-    let t4, t5, t6, t7;
-
     if(winW < 992){
       articleScope = $(this).innerHeight() * 0.6;
     }else{
@@ -816,16 +896,16 @@
     }
 
     function loopA(){
-      t5 = TweenMax.to(pic_5, 0.5, {alpha: 1, delay: 0.8});
-      t7 = TweenMax.to(pic_7, 0.5, {alpha: 1, delay: 0.8, onComplete: loopB});
-      t4 = TweenMax.to(pic_4, 0.5, {alpha: 0, delay: 0.8});
-      t6 = TweenMax.to(pic_6, 0.5, {alpha: 0, delay: 0.8});
+      t5 = TweenMax.to(pic_5, 0.5, {alpha: 1, delay: 2});
+      t7 = TweenMax.to(pic_7, 0.5, {alpha: 1, delay: 2, onComplete: loopB});
+      t4 = TweenMax.to(pic_4, 0.5, {alpha: 0, delay: 2});
+      t6 = TweenMax.to(pic_6, 0.5, {alpha: 0, delay: 2});
     }
     function loopB(){
-      t5 = TweenMax.to(pic_5, 0.5, {alpha: 0, delay: 0.8});
-      t7 = TweenMax.to(pic_7, 0.5, {alpha: 0, delay: 0.8, onComplete: loopA});
-      t4 = TweenMax.to(pic_4, 0.5, {alpha: 1, delay: 0.8});
-      t6 = TweenMax.to(pic_6, 0.5, {alpha: 1, delay: 0.8});
+      t5 = TweenMax.to(pic_5, 0.5, {alpha: 0, delay: 2});
+      t7 = TweenMax.to(pic_7, 0.5, {alpha: 0, delay: 2, onComplete: loopA});
+      t4 = TweenMax.to(pic_4, 0.5, {alpha: 1, delay: 2});
+      t6 = TweenMax.to(pic_6, 0.5, {alpha: 1, delay: 2});
     }
   }
 
