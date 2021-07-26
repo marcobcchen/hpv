@@ -114,7 +114,956 @@
       "source": "images/entrance/filter_1.png",
       "type": "IMAGE",
       "size": 270.336
+    },
+    {
+      "source": "images/entrance/guy_1_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/entrance/guy_1_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/entrance/guy_1_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/entrance/guy_2_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/entrance/guy_2_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/entrance/guy_3_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/entrance/guy_3_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/entrance/guy_3_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/entrance/pattern_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/entrance/pattern_bg_mask.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/entrance/pattern_bg.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/entrance/pattern.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/entrance/sub_pattern_line_mask.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/entrance/sub_pattern_line.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/entrance/sub_pattern.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/bg_1_white.jpg",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/bg_1.jpg",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/intro_text_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/intro_text_1_bg.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/intro_text_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/intro_text_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/intro_text_3_bg.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/intro_text_4.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/intro_text_4_bg.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/intro_text_5.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/intro_text_5_bg.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/intro_text_6.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/intro_text_6_bg.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/intro_text_7.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/intro_text_7_bg.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/intro_text_8.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/intro_text_8_bg.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_4.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_5.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_6.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_7.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_8.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_9.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_10.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_11.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_12.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_13.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_14.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_15.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_16.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_17.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_18.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_19.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_20.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_21.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_22.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_23.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_24.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_25.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_26.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_27.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_28.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_29.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_lg/chip_30.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_4.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_5.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_6.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_7.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_8.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_9.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_10.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_11.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_12.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_13.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_14.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_15.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_16.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_17.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_18.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_19.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_20.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_21.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_22.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_23.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_24.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_25.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_26.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_27.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_28.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_29.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/intro/chip_xs/chip_30.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/kol/bg_even_md.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/kol/bg_even_xs.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/kol/bg_odd_md.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/kol/bg_odd_xs.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/kol/cover_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/kol/cover_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/kol/cover_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/kol/cover_4.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/kol/cover_5.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/kol/cover_6.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/kol/magnifier.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/kol/title_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/kol/title_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/kol/title_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/kol/title_4.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/kol/title_5.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/kol/title_6.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/kol/title.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/arrow_filter.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/arrow.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/bg_lg.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/bg_xs.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/btn_kol.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/btn_lottery.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/btn_other.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/btn_start.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/lottery.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_1_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_1_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_1_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_1_4.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_2_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_2_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_2_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_2_4.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_3_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_3_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_3_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_4_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_4_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_4_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_4_4.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_5_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_5_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_5_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_5_4.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_6_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_6_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_6_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_6_4.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_7_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_7_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_7_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_7_4.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_8_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_8_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_8_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_8_4.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_9_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_9_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_9_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_9_4.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_10_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_10_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/option_10_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/qa/title_success.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/bg_detail_md.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/bg_detail_xs.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_1_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_1_2_filter.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_1_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_2_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_2_2_filter.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_2_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_3_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_3_2_filter.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_3_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_end_1_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_end_1_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_end_1_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_end_2_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_end_2_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_end_2_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_end_2_4.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_end_2_5.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_end_2_6.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_end_2_7.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_end_2_bg.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_end_3_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_end_3_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_end_3_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_end_3_4.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_end_3_5.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_end_3_bg.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_title_1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_title_2.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/clue_title_3.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "images/story/icon_close.png",
+      "type": "IMAGE",
+      "size": 270.336
     }
-    
   ]
 }

@@ -76,7 +76,33 @@ $(function(){
     },
   ]
 
+  const Util = {
+    toGetParam:function(name, casesensitive) {
+      name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+      let href = window.location.href;
+        
+      if (!casesensitive) name = name.toLowerCase();
+      if (!casesensitive) href = href.toLowerCase();
+        
+      let regexS = "[\\?&]" + name + "=([^&#]*)";
+      let regex = new RegExp(regexS);
+      let results = regex.exec(href);
+  
+      if (results == null) {
+        return "";
+      } else {
+        return results[1];
+      }
+    }
+  };
+
   function init(){
+
+    let page = Util.toGetParam('section');
+
+    if(page === 'rule'){
+      TweenMax.to($('.rule'), 0.6, {autoAlpha: 1});
+    }
 
     var randomAry = getRandomNum(questionAmount, 10);
 
@@ -249,7 +275,7 @@ $(function(){
           <span class="typed-detail"></span>
         </p>
         <div class="arrow-group">
-          <div class="arrow"></div>
+          <img class="img-fluid" src="images/qa/arrow_2.png">
         </div>
       </div>
       `;

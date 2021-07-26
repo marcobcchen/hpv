@@ -240,16 +240,16 @@
     filesToLoad: 'js/resource.json',
     onBeforeLoad: function(){
       // console.log('on BeforeLoad');
-      // loading(true);
+      loading(true);
     },
     onComplete: function(){
       // console.log('on complete');
-      // TweenMax.to($('.loading-bg'), 0.5, {autoAlpha: 0, delay: 0.3});
-      // TweenMax.to($('.loading'), 0.5, {autoAlpha: 0, delay: 0.3, onComplete: function(){
-      //   init();
-      //   loading(false);
-      // }})
-      init();
+      TweenMax.to($('.loading-bg'), 0.5, {autoAlpha: 0, delay: 0.3});
+      TweenMax.to($('.loading'), 0.5, {autoAlpha: 0, delay: 0.3, onComplete: function(){
+        init();
+        loading(false);
+      }})
+      // init();
     },
     onElementLoaded: function(obj, elm){
       //console.log(elm);
@@ -526,7 +526,7 @@
   function goMarqueeExit(marqueeAmount){
     TweenMax.to($('.marquee .text:nth-child(odd)'), 0.4, {alpha: 0});
     TweenMax.to($('.marquee .text:nth-child(even)'), 0.4, {alpha: 0});
-    TweenMax.to($('.intro-1 .bg'), 0.15, {alpha: 0, delay: 0.25, onComplete: function(){
+    TweenMax.to($('.intro-1 .bg'), 0.35, {alpha: 0, delay: 0.25, onComplete: function(){
       $('.intro-1').css('visibility', 'hidden');
       clearInterval(marqueeTimer);
       
@@ -804,6 +804,7 @@
     TweenMax.set($('.story .content-1'), {top: '0%'});
     TweenMax.set($('.story .content-1 .pic_clue_2'), {autoAlpha: 0});
     TweenMax.set($('.story .content-1 .pic_clue_filter'), {autoAlpha: 0});
+    TweenMax.set($('.story .content-1 .arrow'), {autoAlpha: 0});
     TweenMax.set($('.story .content-2'), {top: '100%'});
     $('.story .content-1 .pic_clue_filter').removeClass('play');
     $('.story .content-2 article').scrollTop(0);
@@ -813,7 +814,9 @@
   function goClueEnter(storyId){
     let clue_2 = $('.story-' + storyId + ' .pic_clue_2');
     let clue_filter_2 = $('.story-' + storyId + ' .pic_clue_filter');
+    let clue_arriw_2 = $('.story-' + storyId + ' .arrow');
     TweenMax.to(clue_2, 0.4, {autoAlpha: 1});
+    TweenMax.to(clue_arriw_2, 0.4, {autoAlpha: 1, delay: 0.5});
     TweenMax.to(clue_filter_2, 0.6, {autoAlpha: 1, delay: 0.5, onComplete: function(){
       clue_filter_2.addClass('play');
     }});
