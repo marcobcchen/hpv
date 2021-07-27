@@ -97,6 +97,8 @@ $(function(){
   };
 
   function init(){
+    trackPageView('UA-140665809-5', 'pv_lovedetective_final');
+    _smq.push(['pageview','/final','lovedetective_final']);
 
     let page = Util.toGetParam('section');
 
@@ -112,6 +114,9 @@ $(function(){
 
     $('.btn-start').on('click', goQuestionEnter);
     $('.link-rule').on('click', function(){
+      trackEvent('bt_final_rules', 'qa');
+      _smq.push(['custom','lovedetective','final', 'bt_final_rules']);
+
       TweenMax.to($('.rule'), 0.6, {autoAlpha: 1});
     });
     $('.rule-close').on('click', function(){
@@ -128,11 +133,14 @@ $(function(){
         if(!questionStatus[qId - 1]) return;
         questionStatus[qId - 1] = false;
 
+        let optionId = $(this).index() + 1;
         let q = $('.q-' + qId);
         let qTop = q.offset().top;
         let qOptionTop = q.find('.option-group').offset().top;
         let qAnswer = q.find('.answer');
         let moveY = qOptionTop - qTop;
+
+        console.log(optionId);
         
         q.addClass('active');
         qAnswer.addClass('active');
@@ -141,6 +149,9 @@ $(function(){
         let orgId = $(this).data('org');
         let orgQ = allQA.filter(item => (item.id === orgId));      
         let {answer, numberOfOptions} = orgQ[0];
+
+        trackEvent('bt_Q' + orgId + '_' + optionId, 'qa');
+        _smq.push(['custom','lovedetective','final', 'bt_Q' + orgId + '_' + optionId]);
   
         for(let i=1; i<=numberOfOptions; i++){
           let option = q.find('.option-group .option:nth-child(' + i + ')');
@@ -310,6 +321,9 @@ $(function(){
 
   // 問題進場
   function goQuestionEnter(){
+    trackEvent('bt_final_solvecase', 'qa');
+    _smq.push(['custom','lovedetective','final', 'bt_final_solvecase']);
+
     TweenMax.to($('.question-container'), 0.6, {autoAlpha: 1, y: 0, delay: 0.1});
     TweenMax.to($('.description-container'), 0.6, {autoAlpha: 0});
 

@@ -1,6 +1,9 @@
 $(function(){
 
   function init(){
+    trackPageView('UA-140665809-5', 'pv_lovedetective_mentor');
+    _smq.push(['pageview','/mentor','lovedetective_mentor']);
+
     setSlick($('.kol-container'));
 
     $('.kol-container').on('afterChange', function(event, slick, currentSlide){

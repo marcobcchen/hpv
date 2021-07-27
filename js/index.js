@@ -8,6 +8,7 @@
   let typed;
   let typewirters = [];
 
+  let w_bg = $('.intro-2 .w-bg');
   let title_1 = $('.intro-2 .title-1');
   let title_1_bg = $('.intro-2 .title-1-bg');
   let title_2 = $('.intro-2 .title-2');
@@ -241,11 +242,14 @@
     onBeforeLoad: function(){
       // console.log('on BeforeLoad');
       loading(true);
+
+      trackPageView('UA-140665809-5', 'pv_lovedetective_loading');
+      _smq.push(['pageview','/loading','lovedetective_loading']);
     },
     onComplete: function(){
       // console.log('on complete');
-      TweenMax.to($('.loading-bg'), 0.5, {autoAlpha: 0, delay: 0.3});
-      TweenMax.to($('.loading'), 0.5, {autoAlpha: 0, delay: 0.3, onComplete: function(){
+      TweenMax.to($('.loading-bg'), 0.5, {autoAlpha: 0, delay: 2});
+      TweenMax.to($('.loading'), 0.5, {autoAlpha: 0, delay: 2, onComplete: function(){
         init();
         loading(false);
       }})
@@ -255,7 +259,7 @@
       //console.log(elm);
     },
     onUpdate: function(percentage){
-      console.log(percentage);
+      // console.log(percentage);
     }
   });
 
@@ -283,10 +287,16 @@
         goGuyEnter();
       }
       if(entranceStatus === 'guyEnterComplete'){
+        trackEvent('bt_intokv_start', 'index');
+        _smq.push(['custom','lovedetective','kv', 'start']);
+
         entranceStatus = 'guyExitProgress';
         goGuyExit();
       }
       if(entranceStatus === 'guyExitComplete'){
+        trackEvent('bt_kvword_start', 'index');
+        _smq.push(['custom','lovedetective','kvword', 'start']);
+
         goEntranceExit();
         goCasesEnter();
       }
@@ -304,6 +314,34 @@
 
       // 開啟案件
       $('.case-' + caseId).on('click', function(){
+        switch(caseId){
+          case 1:
+            trackEvent('bt_case_shirt', 'index');
+            trackPageView('UA-140665809-5', 'pv_lovedetective_caseshirt');
+            _smq.push(['custom','lovedetective','case', 'bt_case_shirt']);
+            _smq.push(['pageview','/caseshirt','lovedetective_caseshirt']);
+            break;
+          case 2:
+            trackEvent('bt_case_bride', 'index');
+            trackPageView('UA-140665809-5', 'pv_lovedetective_casebride');
+            _smq.push(['custom','lovedetective','case', 'bt_case_bride']);
+            _smq.push(['pageview','/casebride','lovedetective_casebride']);
+            break;
+          case 3:
+            trackEvent('bt_case_hunt', 'index');
+            trackPageView('UA-140665809-5', 'pv_lovedetective_casehunt');
+            _smq.push(['custom','lovedetective','case', 'bt_case_hunt']);
+            _smq.push(['pageview','/casehunt','lovedetective_casehunt']);
+            break;
+          case 4:
+            trackEvent('bt_case_bank', 'index');
+            // trackPageView('UA-140665809-5', 'pv_lovedetective_casehunt');
+            break;
+          case 5:
+            trackEvent('bt_case_vaccine', 'index');
+            // trackPageView('UA-140665809-5', 'pv_lovedetective_casehunt');
+            break;
+        }
         resetClue();
         $('.story-' + caseId + ' .typed-text-1 span').empty();
   
@@ -326,6 +364,27 @@
         if(storyStatus === 'storyFindClue') return;
         storyStatus = 'storyFindClue';
         $('.story-' + caseId + ' #typed-text-2 span').empty();
+        
+        switch(caseId){
+          case 1:
+            trackEvent('bt_caseshirt_car', 'index');
+            _smq.push(['custom','lovedetective','caseshirt', 'bt_caseshirt_car']);
+            break;
+          case 2:
+            trackEvent('bt_casebride_phone', 'index');
+            _smq.push(['custom','lovedetective','casebride', 'bt_casebride_phone']);
+            break;
+          case 3:
+            trackEvent('bt_casehunt_glass', 'index');
+            _smq.push(['custom','lovedetective','casehunt', 'bt_casehunt_glass']);
+            break;
+          case 4:
+            // trackEvent('', 'index');
+            break;
+          case 5:
+            // trackEvent('', 'index');
+            break;
+        }
         
         let el = document.querySelector('.story-' + caseId + ' #typed-text-2');
         let strings_end = strings[0].endString;
@@ -473,6 +532,9 @@
 
   // 設置跑馬燈數量
   function setMarquee(marqueeAmount){
+    trackPageView('UA-140665809-5', 'pv_lovedetective_introkv');
+    _smq.push(['pageview','/introkv','lovedetective_introkv']);
+
     let marqueeEl = '';
 
     for(let i=0; i<marqueeAmount; i++){
@@ -667,6 +729,7 @@
 
   // 標題動畫退場
   function goTitleExit(){
+    TweenMax.to(w_bg, 0.6, {alpha: 0, ease: Power3.easeOut});
     TweenMax.to(title_1, 0.6, {alpha: 0, ease: Power3.easeOut});
     TweenMax.to(title_2, 0.6, {alpha: 0, ease: Power3.easeOut});
     TweenMax.to(title_7, 0.6, {alpha: 0, ease: Power3.easeOut});
@@ -728,6 +791,9 @@
 
   // 人物退場
   function goGuyExit(){
+    trackPageView('UA-140665809-5', 'pv_lovedetective_kvword');
+    _smq.push(['pageview','/kvword','lovedetective_kvword']);
+
     TweenMax.to(arrowGroup, 0.6, {autoAlpha: 0});
     TweenMax.to(bg_1, 0.6, {autoAlpha: 0});
     TweenMax.to(bg_filter, 0.6, {autoAlpha: 0});
@@ -763,6 +829,9 @@
   
   // 案例進場
   function goCasesEnter(){
+    trackPageView('UA-140665809-5', 'pv_lovedetective_case');
+    _smq.push(['pageview','/case','lovedetective_case']);
+
     TweenMax.set(bg_1, {autoAlpha: 0});
     TweenMax.set(bg_filter, {autoAlpha: 0});
     $('.cases').addClass('visible');

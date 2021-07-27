@@ -238,54 +238,54 @@ header .header__nav__share:hover { -webkit-filter: brightness(1.1); filter: brig
 /* line 307, ../_sass/css/page/_qa.scss */
 .questions .questions-container .wrapper .question-container .question-group .q .answer.active { opacity: 1; }
 /* line 312, ../_sass/css/page/_qa.scss */
-.questions .questions-container .wrapper .question-container .question-group .q .arrow-group { visibility: hidden; opacity: 0; position: relative; left: 50%; width: 50px; height: 50px; transform: translateX(-50%); cursor: pointer; }
+.questions .questions-container .wrapper .question-container .question-group .q .arrow-group { visibility: hidden; opacity: 0; position: relative; left: 48%; width: 50px; margin-bottom: 0.5rem; transform: translateX(-50%); cursor: pointer; }
 @media (min-width: 768px) { /* line 312, ../_sass/css/page/_qa.scss */
-  .questions .questions-container .wrapper .question-container .question-group .q .arrow-group { width: 70px; height: 70px; } }
-/* line 327, ../_sass/css/page/_qa.scss */
+  .questions .questions-container .wrapper .question-container .question-group .q .arrow-group { width: 70px; } }
+/* line 328, ../_sass/css/page/_qa.scss */
 .questions .questions-container .wrapper .question-container .question-group .q .arrow-group img { animation: arrowMove 1s ease-in-out infinite; }
 @keyframes arrowMove { 0% { transform: translate(0, 0); }
   50% { transform: translate(-2px, 8px); }
   100% { transform: translate(0, 0); } }
-/* line 394, ../_sass/css/page/_qa.scss */
+/* line 395, ../_sass/css/page/_qa.scss */
 .questions .questions-container .wrapper .question-container .question-group .final-answer { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; }
-/* line 402, ../_sass/css/page/_qa.scss */
+/* line 403, ../_sass/css/page/_qa.scss */
 .questions .questions-container .wrapper .question-container .question-group .final-answer .title { width: 50%; }
-@media (min-width: 768px) { /* line 402, ../_sass/css/page/_qa.scss */
+@media (min-width: 768px) { /* line 403, ../_sass/css/page/_qa.scss */
   .questions .questions-container .wrapper .question-container .question-group .final-answer .title { margin-bottom: 1rem; } }
-@media (min-width: 992px) { /* line 402, ../_sass/css/page/_qa.scss */
+@media (min-width: 992px) { /* line 403, ../_sass/css/page/_qa.scss */
   .questions .questions-container .wrapper .question-container .question-group .final-answer .title { margin-bottom: 0; } }
-/* line 414, ../_sass/css/page/_qa.scss */
+/* line 415, ../_sass/css/page/_qa.scss */
 .questions .questions-container .wrapper .question-container .question-group .final-answer .lottery { width: 80%; margin-bottom: 1rem; }
-@media (min-width: 768px) { /* line 414, ../_sass/css/page/_qa.scss */
+@media (min-width: 768px) { /* line 415, ../_sass/css/page/_qa.scss */
   .questions .questions-container .wrapper .question-container .question-group .final-answer .lottery { margin-bottom: 3rem; } }
-@media (min-width: 992px) { /* line 414, ../_sass/css/page/_qa.scss */
+@media (min-width: 992px) { /* line 415, ../_sass/css/page/_qa.scss */
   .questions .questions-container .wrapper .question-container .question-group .final-answer .lottery { width: 50%; margin-bottom: 1rem; } }
-/* line 428, ../_sass/css/page/_qa.scss */
-.questions .questions-container .wrapper .question-container .question-group .final-answer .btn_lottery { width: 80%; }
-@media (min-width: 768px) { /* line 428, ../_sass/css/page/_qa.scss */
+/* line 429, ../_sass/css/page/_qa.scss */
+.questions .questions-container .wrapper .question-container .question-group .final-answer .btn_lottery { width: 80%; margin-left: -30px; }
+@media (min-width: 768px) { /* line 429, ../_sass/css/page/_qa.scss */
   .questions .questions-container .wrapper .question-container .question-group .final-answer .btn_lottery { width: 80%; } }
-@media (min-width: 992px) { /* line 428, ../_sass/css/page/_qa.scss */
+@media (min-width: 992px) { /* line 429, ../_sass/css/page/_qa.scss */
   .questions .questions-container .wrapper .question-container .question-group .final-answer .btn_lottery { width: 70%; } }
-/* line 440, ../_sass/css/page/_qa.scss */
+/* line 442, ../_sass/css/page/_qa.scss */
 .questions .questions-container .wrapper .question-container .question-group .final-answer .btn-group { width: 90%; }
 
-/* line 450, ../_sass/css/page/_qa.scss */
+/* line 452, ../_sass/css/page/_qa.scss */
 .rule { visibility: hidden; opacity: 0; position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 90; background-color: transparent; }
-/* line 461, ../_sass/css/page/_qa.scss */
+/* line 463, ../_sass/css/page/_qa.scss */
 .rule .rule-container { position: absolute; left: 50%; top: 50%; width: 90%; max-width: 500px; height: 71vh; background-color: rgba(0, 0, 0, 0.8); transform: translate(-50%, calc(-50% + 40px)); }
-/* line 471, ../_sass/css/page/_qa.scss */
+/* line 473, ../_sass/css/page/_qa.scss */
 .rule .rule-container article { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; padding: 1rem; text-align: justify; color: #fff; }
-/* line 482, ../_sass/css/page/_qa.scss */
+/* line 484, ../_sass/css/page/_qa.scss */
 .rule .rule-container article h5 { line-height: 1.8; margin-top: 2rem; margin-bottom: 1rem; }
-/* line 487, ../_sass/css/page/_qa.scss */
+/* line 489, ../_sass/css/page/_qa.scss */
 .rule .rule-container article h5:first-child { margin-top: 0rem; }
-/* line 492, ../_sass/css/page/_qa.scss */
+/* line 494, ../_sass/css/page/_qa.scss */
 .rule .rule-container article ul { list-style: none; padding-left: 1rem; }
-/* line 497, ../_sass/css/page/_qa.scss */
+/* line 499, ../_sass/css/page/_qa.scss */
 .rule .rule-container article p { font-size: 0.9rem; }
-/* line 501, ../_sass/css/page/_qa.scss */
+/* line 503, ../_sass/css/page/_qa.scss */
 .rule .rule-container article a { color: red; }
-/* line 506, ../_sass/css/page/_qa.scss */
+/* line 508, ../_sass/css/page/_qa.scss */
 .rule .rule-container .rule-close { position: absolute; right: 0; top: -40px; width: 30px; height: 30px; background: url(../images/story/icon_close.png) no-repeat center center; background-size: contain; cursor: pointer; transition: transform .3s ease-in-out; }
-/* line 517, ../_sass/css/page/_qa.scss */
+/* line 519, ../_sass/css/page/_qa.scss */
 .rule .rule-container .rule-close:hover { transform: rotate(90deg); }
