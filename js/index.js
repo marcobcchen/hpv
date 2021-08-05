@@ -1095,16 +1095,16 @@
       TweenMax.to(pic_4, 0.5, {alpha: 0, delay: 0.1});
     }
     function loopA(){
-      TweenMax.to(pic_1, 0.5, {alpha: 1, delay: 2});
-      TweenMax.to(pic_2, 0.5, {alpha: 1, delay: 2, onComplete: loopB});
-      TweenMax.to(pic_3, 0.5, {alpha: 0, delay: 2});
-      TweenMax.to(pic_4, 0.5, {alpha: 0, delay: 2});
+      TweenMax.to(pic_1, 0.5, {alpha: 1, delay: 3});
+      TweenMax.to(pic_2, 0.5, {alpha: 1, delay: 3, onComplete: loopB});
+      TweenMax.to(pic_3, 0.5, {alpha: 0, delay: 3});
+      TweenMax.to(pic_4, 0.5, {alpha: 0, delay: 3});
     }
     function loopB(){
-      TweenMax.to(pic_1, 0.5, {alpha: 0, delay: 2});
-      TweenMax.to(pic_2, 0.5, {alpha: 0, delay: 2, onComplete: loopA});
-      TweenMax.to(pic_3, 0.5, {alpha: 1, delay: 2});
-      TweenMax.to(pic_4, 0.5, {alpha: 1, delay: 2});
+      TweenMax.to(pic_1, 0.5, {alpha: 0, delay: 3});
+      TweenMax.to(pic_2, 0.5, {alpha: 0, delay: 3, onComplete: loopA});
+      TweenMax.to(pic_3, 0.5, {alpha: 1, delay: 3});
+      TweenMax.to(pic_4, 0.5, {alpha: 1, delay: 3});
     }
   }
 });
