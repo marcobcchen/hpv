@@ -451,7 +451,7 @@ header .header__nav__share:hover { -webkit-filter: brightness(1.1); filter: brig
 /* line 107, ../_sass/css/page/_cases.scss */
 .cases .cases-container .case-container .case img:focus-visible { outline: none; }
 /* line 113, ../_sass/css/page/_cases.scss */
-.cases .cases-container .case-container .case-3 .title { left: 40%; }
+.cases .cases-container .case-container .case-3 .title, .cases .cases-container .case-container .case-4 .title, .cases .cases-container .case-container .case-5 .title { left: 25%; }
 /* line 119, ../_sass/css/page/_cases.scss */
 .cases .cases-container .case-container .case-1 .title { left: 37%; }
 /* line 125, ../_sass/css/page/_cases.scss */
@@ -622,6 +622,40 @@ header .header__nav__share:hover { -webkit-filter: brightness(1.1); filter: brig
 .story-3 .story-container .content-2 .clue-end-group .clue-end-4 { position: absolute; left: 0; top: 53.80711%; width: 30.57325%; }
 /* line 481, ../_sass/css/page/_story.scss */
 .story-3 .story-container .content-2 .clue-end-group .clue-end-5 { position: absolute; right: 0; bottom: 0; width: 31.21019%; }
+
+/* line 495, ../_sass/css/page/_story.scss */
+.story-4 .story-container .content-1 .pic_clue_filter { position: absolute; left: 20.5414%; top: 6%; width: 59.3949%; }
+/* line 502, ../_sass/css/page/_story.scss */
+.story-4 .story-container .content-1 .typed-text-2 { position: absolute; left: 25%; top: 68%; }
+/* line 508, ../_sass/css/page/_story.scss */
+.story-4 .story-container .content-1 .arrow { position: absolute; left: 61%; top: 9%; width: 10%; animation: arrowMove2 1s infinite; }
+/* line 518, ../_sass/css/page/_story.scss */
+.story-4 .story-container .content-2 .clue-end-group { position: relative; margin-bottom: 1rem; }
+/* line 522, ../_sass/css/page/_story.scss */
+.story-4 .story-container .content-2 .clue-end-group .bg { width: 100%; }
+@media (min-width: 768px) { /* line 522, ../_sass/css/page/_story.scss */
+  .story-4 .story-container .content-2 .clue-end-group .bg { width: 70%; } }
+/* line 530, ../_sass/css/page/_story.scss */
+.story-4 .story-container .content-2 .clue-end-group .clue-end-1 { position: absolute; left: -1.69492%; top: 58.67971%; width: 37.28814%; }
+/* line 537, ../_sass/css/page/_story.scss */
+.story-4 .story-container .content-2 .clue-end-group .clue-end-2 { position: absolute; left: 64.40678%; top: -2.44499%; width: 33.05085%; }
+
+/* line 551, ../_sass/css/page/_story.scss */
+.story-5 .story-container .content-1 .pic_clue_filter { position: absolute; left: 43.3121%; top: 28.57143%; width: 46.33758%; }
+/* line 558, ../_sass/css/page/_story.scss */
+.story-5 .story-container .content-1 .typed-text-2 { position: absolute; left: 25%; top: 18%; }
+/* line 564, ../_sass/css/page/_story.scss */
+.story-5 .story-container .content-1 .arrow { position: absolute; left: 78%; top: 27%; width: 10%; animation: arrowMove2 1s infinite; }
+/* line 574, ../_sass/css/page/_story.scss */
+.story-5 .story-container .content-2 .clue-end-group { position: relative; margin-bottom: 1rem; }
+/* line 578, ../_sass/css/page/_story.scss */
+.story-5 .story-container .content-2 .clue-end-group .bg { width: 100%; }
+@media (min-width: 768px) { /* line 578, ../_sass/css/page/_story.scss */
+  .story-5 .story-container .content-2 .clue-end-group .bg { width: 70%; } }
+/* line 586, ../_sass/css/page/_story.scss */
+.story-5 .story-container .content-2 .clue-end-group .clue-end-1, .story-5 .story-container .content-2 .clue-end-group .clue-end-3 { position: absolute; left: 1.78253%; top: 57.14286%; width: 34.2246%; }
+/* line 593, ../_sass/css/page/_story.scss */
+.story-5 .story-container .content-2 .clue-end-group .clue-end-2, .story-5 .story-container .content-2 .clue-end-group .clue-end-4 { position: absolute; left: 64.17112%; top: 2.5974%; width: 36.18538%; }
 
 @keyframes arrowFlash { 0% { opacity: 0; }
   50% { opacity: 1; }

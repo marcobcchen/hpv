@@ -139,6 +139,18 @@
       xsString: '你就是偵探嗎？^100\n看起來跟我年紀差不多耶…^100\n真的能幫我解決問題嗎？^100\n算了不管了，事情是這樣的…',
       lgString: '你就是偵探嗎？看起來跟我年紀差不多耶…^100\n真的能幫我解決問題嗎？算了不管了，事情是這樣的…',
       endString: '房內的空氣，瀰漫著複雜的香氣，^100\n那首生日快樂，似乎成了愛情的悲歌…',
+    },
+    {
+      id: 4,
+      xsString: '唉...經過三天了，^100\n心情比較平復一點，​^100\n但我真的還是很難相信​^100\n我女友會做這種事…',
+      lgString: '唉...經過三天了，心情比較平復一點，​^100\n但我真的還是很難相信​我女友會做這種事…',
+      endString: '520？526？920？藏在這些數字背後的​^100\n真相，即將浮出水面……​',
+    },
+    {
+      id: 5,
+      xsString: '哇～第一次見到偵探本人耶！！^100\n我今天要跟你說的這件事，^100\n算是個突發事件，^100\n讓我和男友的感情發生了變化…​',
+      lgString: '哇～第一次見到偵探本人耶！！我今天要跟你說的這件事，^100\n算是個突發事件，讓我和男友的感情發生了變化…',
+      endString: '悄悄提領萬元的他，趁著女友睡得香甜時，​^100\n撥出了一通未知電話…​',
     }
   ]
 
@@ -335,11 +347,15 @@
             break;
           case 4:
             trackEvent('bt_case_bank', 'index');
-            // trackPageView('UA-140665809-5', 'pv_lovedetective_casehunt');
+            trackPageView('UA-140665809-5', 'pv_lovedetective_casebank');
+            _smq.push(['custom','lovedetective','case', 'bt_case_bank']);
+            _smq.push(['pageview','/casebank','lovedetective_casebank']);
             break;
           case 5:
             trackEvent('bt_case_vaccine', 'index');
-            // trackPageView('UA-140665809-5', 'pv_lovedetective_casehunt');
+            trackPageView('UA-140665809-5', 'pv_lovedetective_casevaccine');
+            _smq.push(['custom','lovedetective','case', 'bt_case_vaccine']);
+            _smq.push(['pageview','/casevaccine','lovedetective_casevaccine']);
             break;
         }
         resetClue();
@@ -379,10 +395,12 @@
             _smq.push(['custom','lovedetective','casehunt', 'bt_casehunt_glass']);
             break;
           case 4:
-            // trackEvent('', 'index');
+            trackEvent('bt_casebank_transfer', 'index');
+            _smq.push(['custom','lovedetective','casebank', 'bt_casebank_transfer']);
             break;
           case 5:
-            // trackEvent('', 'index');
+            trackEvent('bt_casevaccine_wallet', 'index');
+            _smq.push(['custom','lovedetective','casevaccine', 'bt_casevaccine_wallet']);
             break;
         }
         
@@ -418,6 +436,8 @@
     $('.story-1 .content-2 article').on('scroll', goClueEndScroll_1);
     $('.story-2 .content-2 article').on('scroll', goClueEndScroll_2);
     $('.story-3 .content-2 article').on('scroll', goClueEndScroll_3);
+    $('.story-4 .content-2 article').on('scroll', goClueEndScroll_4);
+    $('.story-5 .content-2 article').on('scroll', goClueEndScroll_5);
   }
 
   function onResize(){
@@ -483,7 +503,7 @@
 
     TweenMax.set($('.case'), {scale: 0.8});
     if(winW > 992){
-      TweenMax.set($('.case-2'), {scale: 1});
+      TweenMax.set($('.case-4'), {scale: 1});
     }else{
       TweenMax.set($('.case-1'), {scale: 1});
     }
@@ -498,7 +518,7 @@
       }else{
         nowId = currentSlide + 1;
       }
-      TweenMax.to($('.case-' + nowId), 0.6, {scale: 1, ease: Power3.easeOut});
+      TweenMax.to($('.case-new-' + nowId), 0.6, {scale: 1, ease: Power3.easeOut});
     });
   }
 
@@ -968,16 +988,16 @@
     }
 
     function loopA(){
-      t5 = TweenMax.to(pic_5, 0.5, {alpha: 1, delay: 2});
-      t7 = TweenMax.to(pic_7, 0.5, {alpha: 1, delay: 2, onComplete: loopB});
-      t4 = TweenMax.to(pic_4, 0.5, {alpha: 0, delay: 2});
-      t6 = TweenMax.to(pic_6, 0.5, {alpha: 0, delay: 2});
+      TweenMax.to(pic_5, 0.5, {alpha: 1, delay: 2});
+      TweenMax.to(pic_7, 0.5, {alpha: 1, delay: 2, onComplete: loopB});
+      TweenMax.to(pic_4, 0.5, {alpha: 0, delay: 2});
+      TweenMax.to(pic_6, 0.5, {alpha: 0, delay: 2});
     }
     function loopB(){
-      t5 = TweenMax.to(pic_5, 0.5, {alpha: 0, delay: 2});
-      t7 = TweenMax.to(pic_7, 0.5, {alpha: 0, delay: 2, onComplete: loopA});
-      t4 = TweenMax.to(pic_4, 0.5, {alpha: 1, delay: 2});
-      t6 = TweenMax.to(pic_6, 0.5, {alpha: 1, delay: 2});
+      TweenMax.to(pic_5, 0.5, {alpha: 0, delay: 2});
+      TweenMax.to(pic_7, 0.5, {alpha: 0, delay: 2, onComplete: loopA});
+      TweenMax.to(pic_4, 0.5, {alpha: 1, delay: 2});
+      TweenMax.to(pic_6, 0.5, {alpha: 1, delay: 2});
     }
   }
 
@@ -1013,6 +1033,72 @@
       TweenMax.to(pic_4, 0.3, {alpha: 0});
       TweenMax.to(pic_5, 0.3, {alpha: 0});
       TweenMax.to($(this).find('.bg > img'), 0.3, {alpha: 0});
+    }
+  }
+
+  // 案件四線索結尾
+  function goClueEndScroll_4(){
+    let articleScope;
+    let articleTop = $(this).offset().top;
+    let pic_1 = $(this).find('.clue-end-1');
+    let pic_2 = $(this).find('.clue-end-2');
+    let picBgScrollTop = $(this).find('.bg').offset().top - articleTop;
+
+    if(winW < 992){
+      articleScope = $(this).innerHeight() * 0.6;
+    }else{
+      articleScope = $(this).innerHeight() * 0.3;
+    }
+
+    if(picBgScrollTop < articleScope){
+      TweenMax.to(pic_1, 0.5, {y: 0, alpha: 1});
+      TweenMax.to(pic_2, 0.5, {y: 0, alpha: 1, delay: 0.1});
+    }else{
+      TweenMax.to(pic_1, 0.5, {y: 20, alpha: 0});
+      TweenMax.to(pic_2, 0.5, {y: 20, alpha: 0});
+    }
+  }
+
+  // 案件五線索結尾
+  function goClueEndScroll_5(){
+    let articleScope;
+    let articleTop = $(this).offset().top;
+    let pic_1 = $(this).find('.clue-end-1');
+    let pic_2 = $(this).find('.clue-end-2');
+    let pic_3 = $(this).find('.clue-end-3');
+    let pic_4 = $(this).find('.clue-end-4');
+    let picBgScrollTop = $(this).find('.bg').offset().top - articleTop;
+
+    if(winW < 992){
+      articleScope = $(this).innerHeight() * 0.6;
+    }else{
+      articleScope = $(this).innerHeight() * 0.3;
+    }
+
+    if(picBgScrollTop < articleScope){
+      loopA();
+    }else{
+      TweenMax.killTweensOf(pic_1);
+      TweenMax.killTweensOf(pic_2);
+      TweenMax.killTweensOf(pic_3);
+      TweenMax.killTweensOf(pic_4);
+      TweenMax.to(pic_1, 0.5, {alpha: 0});
+      TweenMax.to(pic_2, 0.5, {alpha: 0});
+      TweenMax.to(pic_3, 0.5, {alpha: 0});
+      TweenMax.to(pic_4, 0.5, {alpha: 0});
+    }
+
+    function loopA(){
+      TweenMax.to(pic_1, 0.5, {alpha: 1, delay: 2});
+      TweenMax.to(pic_2, 0.5, {alpha: 1, delay: 2, onComplete: loopB});
+      TweenMax.to(pic_3, 0.5, {alpha: 0, delay: 2});
+      TweenMax.to(pic_4, 0.5, {alpha: 0, delay: 2});
+    }
+    function loopB(){
+      TweenMax.to(pic_1, 0.5, {alpha: 0, delay: 2});
+      TweenMax.to(pic_2, 0.5, {alpha: 0, delay: 2, onComplete: loopA});
+      TweenMax.to(pic_3, 0.5, {alpha: 1, delay: 2});
+      TweenMax.to(pic_4, 0.5, {alpha: 1, delay: 2});
     }
   }
 });
