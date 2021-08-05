@@ -144,7 +144,7 @@
       id: 4,
       xsString: '唉...經過三天了，^100\n心情比較平復一點，​^100\n但我真的還是很難相信​^100\n我女友會做這種事…',
       lgString: '唉...經過三天了，心情比較平復一點，​^100\n但我真的還是很難相信​我女友會做這種事…',
-      endString: '520？526？920？藏在這些數字背後的​^100\n真相，即將浮出水面……​',
+      endString: '520？526？920？​^100\n藏在這些數字背後的真相，即將浮出水面……​',
     },
     {
       id: 5,
@@ -1076,7 +1076,7 @@
     }
 
     if(picBgScrollTop < articleScope){
-      loopA();
+      loop();
     }else{
       TweenMax.killTweensOf(pic_1);
       TweenMax.killTweensOf(pic_2);
@@ -1088,6 +1088,12 @@
       TweenMax.to(pic_4, 0.5, {alpha: 0});
     }
 
+    function loop(){
+      TweenMax.to(pic_1, 0.5, {alpha: 1, delay: 0.1});
+      TweenMax.to(pic_2, 0.5, {alpha: 1, delay: 0.1, onComplete: loopB});
+      TweenMax.to(pic_3, 0.5, {alpha: 0, delay: 0.1});
+      TweenMax.to(pic_4, 0.5, {alpha: 0, delay: 0.1});
+    }
     function loopA(){
       TweenMax.to(pic_1, 0.5, {alpha: 1, delay: 2});
       TweenMax.to(pic_2, 0.5, {alpha: 1, delay: 2, onComplete: loopB});
