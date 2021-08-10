@@ -237,7 +237,6 @@ $(function(){
       testArray.splice(random, 1); 
     } 
 
-    result = [3,3,3,3]
     return result; 
   } 
 
